@@ -1,5 +1,11 @@
 const { NotImplementedError } = require('../extensions/index.js');
 
+class ListNode {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
 class Queue {
 
   constructor() {
@@ -22,12 +28,12 @@ class Queue {
     if (!this.head) {
       return null;
     }
-    const removedValue = this.head.value;
+    const value = this.head.value;
     this.head = this.head.next;
     if (!this.head) {
       this.tail = null;
     }
-    return removedValue;
+    return value;
   }
 
   getUnderlyingList() {
